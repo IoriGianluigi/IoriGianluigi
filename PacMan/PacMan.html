@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+
+<head>
+	<title>senza nome</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+		* {
+			font-family: comic sans ms;
+			margin: 0;
+			padding: 0;
+		}
+
+		td {
+			width: 30px;
+			height: 30px;
+		}
+
+		table {
+			float: left;
+		}
+
+		#pacMan,
+		#fantasma {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+		}
+
+		td img {
+			width: 30px;
+			height: 30px;
+		}
+
+		div#contenitore {
+			position: absolute;
+			margin-left: 150px;
+			margin-top: 0px;
+			border: 1pt solid black;
+			background-color: black;
+		}
+
+	</style>
+
+	<script type"text/javascript">
+		var img;
+
+		var passoPacManx = 0;
+		var passoPacMany = 0;
+
+		var lImg = 30;
+		var hImg = 30;
+
+		var lDiv = parseInt($(window).width() * 0.80) - 50;
+		var hDiv = parseInt($(window).height() * 0.80);
+
+		var xPacman = lDiv/2;
+		var yPacman = hDiv/2;
+
+		var fantasma;
+		var xFantasma, yFantasma;
+		var passoFantasmaX = 0, passoFantasmaY = 10;
+
+		var mf, cdf;
+
+		$(document).ready(function () {
+			$("#contenitore").css("width", lDiv);
+			$("#contenitore").css("height", hDiv);
+
+
+			img = $('#pacMan');		
+			$(document).keydown(tastiera);
+			$("img").click(cambia);
+
+			intervallo = setInterval(muoviPacMan, 70);
+
+
+			fantasma = $("#fantasma");
+			fantasma.hide();
+
+			setTimeout(apparizione, Math.floor(Math.random() * 2000));
+
+		})
+
+		function tastiera(evento) {
+			switch (evento.key) {
+				case "ArrowRight":
+					passoPacManx = 10;
+					passoPacMany = 0;
+				break;
+
+				case "ArrowLeft":
+					passoPacManx = -10;
+					passoPacMany = 0;
+				break;
+
+				case "ArrowUp":
+					passoPacMany = -10;
+					passoPacManx = 0;
+				break;
+
+				case "ArrowDown":
+					passoPacMany = 10;
+					passoPacManx = 0;
+				break;
+			}
+		}
+
+		function cambia(event) {
+
+			switch (event.target.id) {
+				case "pacMan":
+				break;
+
+				case "dx":
+					passoPacManx = 10;
+					passoPacMany = 0;
+				break;
+
+				case "sx":
+					passoPacManx = -10;
+					passoPacMany = 0;
+				break;
+
+				case "su":
+					passoPacMany = -10;
+					passoPacManx = 0;
+				break;
+
+				case "giu":
+					passoPacMany = 10;
+					passoPacManx = 0;
+				break;
+
+				case "stop":
+					passoPacMany = 0;
+					passoPacManx = 0;
+				break;
+			}
+
+		}
+
+
+		function muoviPacMan() {
+			xPacman += passoPacManx;
+
+			if (xPacman > lDiv - lImg) { 
+				xPacman = 0; 
+			}
+
+			if (xPacman < 0) { 
+				xPacman = lDiv - lImg; 
+			}
+
+			yPacman += passoPacMany;
+
+			if (yPacman > hDiv - hImg) { 
+				yPacman = 0; 
+			}
+
+			if (yPacman < 0) { 
+				yPacman = hDiv - hImg; 
+			}
+
+			img.css("left", xPacman + 'px');
+			img.css("top", yPacman + 'px');
+		}
+
+
+
+		function apparizione() {
+			yFantasma = Math.floor(Math.random() * (hDiv - hImg * 2));
+			xFantasma = Math.floor(Math.random() * (lDiv - lImg * 2));
+
+			fantasma.css("left", xFantasma + "px");
+			fantasma.css("top", yFantasma + "px");
+
+			fantasma.show();
+
+			mf = setInterval(muoviFantasma, 70);
+			cdf = setInterval(cambiaDirezioneFantasma, 1500);
+		}
+
+
+		function cambiaDirezioneFantasma()
+		{
+			var n=Math.floor(Math.random() * 4);
+
+			switch(n){
+				case 0:
+					passoFantasmaX=10;
+					passoFantasmaY=0;
+				break;
+
+				case 1:
+					passoFantasmaX=-10;
+					passoFantasmaY=0;
+				break;
+
+				case 2:
+					passoFantasmaY=10;
+					passoFantasmaX=0;
+				break;
+
+				case 3:
+					passoFantasmaY=-10;
+					passoFantasmaX=0
+				break;
+			}
+		}
+
+		function muoviFantasma() {
+			xFantasma += passoFantasmaX;
+
+			if (xFantasma > lDiv - lImg){ 
+				passoFantasmaX *= -1; 
+			}
+
+			if (xFantasma < 0) { 
+				passoFantasmaX *= -1; 
+			}
+
+			yFantasma += passoFantasmaY;
+
+			if (yFantasma > hDiv - hImg) { 
+				passoFantasmaY *= -1; 
+			}
+			if (yFantasma < 0) { 
+				passoFantasmaY *= -1; 
+			}
+
+			fantasma.css("left", xFantasma + 'px');
+			fantasma.css("top", yFantasma + 'px');
+			controlloCollisione();
+		}
+
+
+		function controlloCollisione() {
+			if (!( (xPacman+lImg < xFantasma) || (xFantasma+lImg < xPacman) || (yPacman+hImg < yFantasma) || (yFantasma+hImg < yPacman) ))	{
+				$("#contenitore").css("background-color", "red");
+				alert("CONTATTO");
+
+				$("#fantasma").hide();
+				xFantasma=-10; yFantasma=-10;
+				clearInterval(mf);
+				clearInterval(cdf);
+
+				$("#contenitore").css("background-color","black");
+
+				setTimeout(apparizione,  1500);
+			}
+		}		
+	</script>
+</head>
+
+<body>
+		<table>
+			<tr>
+				<td>
+				<td><img src="immagini/frecciaSu.gif" id="su">
+				<td>
+			</tr>
+			<tr>
+				<td><img src="immagini/frecciaSx.gif" id="sx">
+				<td><img src="immagini/stop.gif" id="stop">
+				<td><img src="immagini/frecciaDx.gif" id="dx">
+			</tr>
+			<tr>
+				<td>
+				<td><img src="immagini/frecciaGiu.gif" id="giu">
+				<td>
+			</tr>
+		</table>
+
+		<div id="contenitore">
+			<img id="pacMan" src="immagini/pacman.gif">
+			<img id="fantasma" src="immagini/fantasma.png">
+		</div>
+</body>
+
+</html>
