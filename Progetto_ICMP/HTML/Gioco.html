@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/StyleGioco.css">
+    <script type="text/javascript" src="../JS/ScriptGioco.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Impara con il Ping!</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <h1 class="logo">Impara con il Ping!</h1>
+                <ul class="nav-links">
+                    <li><a href="Home.html" >Home</a></li>
+                    <li><a href="Gioco.html" id="corrente">Quiz</a></li>
+                    <li><a href="Animazione.html">Simulazione</a></li>
+                </ul>
+        </nav>
+    </header>
+
+        <div class="hero">
+            <div class="container">
+                <h2>Testa le tue abilità sul Ping!</h2>
+                <p>Sei pronto? Clicca sul pulsante per iniziare il Test.</p>
+                <button id="start-game" class="cta-button">Inizia il Test</button>
+                <p id="score">Punteggio: 0</p>
+                <p id="risultato"></p>
+            </div>
+        </div>
+        
+    <section class="game-container" style="display: none;">
+        <div class="container">
+            <h2>Rispondi alle domande per sapere il tuo livello di preparazione</h2>
+            <div id="question-container" class="question-container">
+                <p id="question"></p>
+                <div class="opzioni">
+                    <button class="opzione" onclick="checkAnswer(this)"></button>
+                    <button class="opzione" onclick="checkAnswer(this)"></button>
+                    <button class="opzione" onclick="checkAnswer(this)"></button>
+                </div>
+                <p id="risultatoDomanda"></p>
+            </div>
+            <button id="avanti">Prossima domanda</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bondavalli Michelle & Iori Gianluigi</p>
+        </div>
+    </footer>
+</body>
+</html>

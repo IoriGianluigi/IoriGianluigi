@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ping & ICMP</title>
+    <link rel="stylesheet" href="../CSS/StyleHome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <h1 class="logo">ICMP (ping)</h1>
+                <ul class="nav-links">
+                    <li><a href="Home.html" id="corrente">Home</a></li>
+                    <li><a href="Gioco.html">Quiz</a></li>
+                    <li><a href="Animazione.html">Simulazione</a></li>
+                </ul>
+        </nav>
+
+    </header>
+
+        <div class="testo">
+            <div class="container">
+                <h2>Cos'è il Ping?</h2>
+                <p>Il "ping" è un comando utilizzato per verificare la connettività tra due dispositivi in una rete.</p>
+                <p>Questo strumento sfrutta il protocollo <italic>ICMP</italic> (Internet Control Message Protocol) per inviare pacchetti di dati speciali chiamati "echo request". L'host di destinazione risponde a questi pacchetti con "echo reply", confermando la ricezione e la disponibilità di comunicazione.</p> <br>
+                <p>Il ping è ampiamente utilizzato per:</p> 
+                <ul style="padding-left: 25px">
+                    <li>Verificare la connettività di un host su una rete.</li>
+                    <li>Misurare la latenza di rete (tempo di risposta).</li>
+                    <li>Diagnostica dei problemi di connessione e perdita di pacchetti.</li>
+                </ul> <br>
+
+                <h2>Come Funziona?</h2>
+                <p>
+                    Il funzionamento del ping si basa sull'invio di piccoli pacchetti di dati, noti come "pacchetti di ping" o "echo request", da un dispositivo (ad esempio, un computer) a un altro dispositivo (ad esempio, un server). Il dispositivo di destinazione riceve questi pacchetti e risponde indietro con un altro pacchetto, chiamato "echo reply", se è in grado di ricevere i pacchetti.
+                    Durante questo processo, il ping misura il tempo impiegato per inviare un pacchetto al dispositivo di destinazione e ricevere una risposta. Questo tempo, chiamato "latenza di rete" o "ping time", fornisce informazioni sulla velocità e sulla stabilità della connessione di rete tra i due dispositivi.
+                </p>
+
+                <p>Per eseguire un ping da un terminale o prompt dei comandi, utilizza il comando seguito dall'indirizzo IP o dal nome dell'host di destinazione.</p>
+                <p>Ad esempio:</p>
+                <pre>
+                    <code>ping google.com</code>
+                    <code>ping 8.8.8.8</code>
+                </pre>
+
+                <h2>Output del Comando Ping</h2>
+                <p>
+                    L'output del comando ping mostra informazioni utili, inclusi il tempo di risposta (latenza), il numero di pacchetti trasmessi e ricevuti, e eventuali errori o perdita di pacchetti. L'interpretazione di queste informazioni può aiutare gli amministratori di rete e gli utenti a comprendere lo stato della connettività di rete. 
+                    <br><br>
+                </p>
+
+                <h2>Cos'è ICMP</h2>
+                <p>
+                    ICMP (Internet Control Message Protocol) è un protocollo di rete utilizzato per inviare messaggi di controllo e di segnalazione tra dispositivi su una rete IP (Internet Protocol). È un componente fondamentale del protocollo IP ed è utilizzato per diverse funzioni importanti, inclusa la gestione di errori di rete, il testing della connettività e la segnalazione di informazioni di controllo.
+                     <br><br>
+                </p>
+
+                <h2>Funzioni Principali di ICMP</h2>
+                <p>
+                    <ul style="padding-left: 25px">
+                        <li>Segnalazione degli Errori di Rete</li>
+                        <li>Controllo di Ping e Traceroute</li>
+                        <li>Gestione del Time-to-Live (TTL): ICMP viene utilizzato per gestire il campo "Time-to-Live" (TTL) nei pacchetti IP, questo parametro parte da 128 e viene decrementato ogni volta che il pacchetto passa per un router. Se il TTL di un pacchetto raggiunge zero, viene generato un messaggio ICMP di "Time Exceeded" e il pacchetto viene scartato.</li>
+                        <li>Rilevamento della Rete e Diagnostica</li>
+                    </ul> <br>
+                </p>
+                
+
+                <h2>Tipi di Messaggi ICMP</h2>
+                <p>
+                    <ul style="padding-left: 25px">
+                        <li>Echo Request / Echo Reply: Utilizzato dal comando ping per testare la connettività inviando e ricevendo pacchetti di eco.</li>
+                        <li>Destination Unreachable: Utilizzato per segnalare che un pacchetto non può raggiungere la destinazione.</li>
+                        <li>Time Exceeded: Utilizzato quando il TTL di un pacchetto scade prima di raggiungere la destinazione.</li>
+                        <li>Parameter Problem: Utilizzato per segnalare errori nei parametri dei pacchetti IP</li>
+                    </ul> <br>
+                </p>
+
+                <div class="row" id="riga1">
+                    <div class="col-md-6">
+                        <img src="../IMMAGINI/ping-befehl-EN-5.jpg" alt="Ping">
+                    </div>
+            
+                    <div class="col-md-5 offset-md-1">
+                        <img src="../IMMAGINI/what_is_icmp_664d9661f5.png" alt="ICMP">
+                    </div>
+                </div>
+
+                <div class="row" id="riga2">
+                    <div class="col-md-6">
+                        <h3>Ping</h3>
+                    </div>
+            
+                    <div class="col-md-5 offset-md-1">
+                        <h3>ICMP</h3>
+                    </div>
+                </div>
+
+                <div class="row" id="riga3">
+                    <div class="col-md-6">
+                        <p>Il Ping invia pacchetti di prova a un host e attende una risposta per verificare la connettività.</p>
+                    </div>
+            
+                    <div class="col-md-5 offset-md-1">
+                        <p>ICMP è il protocollo utilizzato per inviare messaggi di errore e di controllo sulla rete IP.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+    
+
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bondavalli Michelle & Iori Gianluigi</p>
+        </div>
+    </footer>
+</body>
+</html>

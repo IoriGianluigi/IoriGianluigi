@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/StyleAnimazione.css">
+    <script type="text/javascript" src="../JS/MuoviBustaStatico.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Animazione</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+                <h1 class="logo">Prova il Ping!</h1>
+                <ul class="nav-links">
+                    <li><a href="Home.html" >Home</a></li>
+                    <li><a href="Gioco.html">Quiz</a></li>
+                    <li><a href="Animazione.html" id="corrente" class="active">Simulazione</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+            <div class="testo">
+                <h2>Scopri il ping</h2>
+                <p id="istruzioni">Trascina il pacchetto sul calcolatore da cui vuoi partire, digita il ping nel prompt e guarda cosa succede!</p>
+                <img src="../IMMAGINI/busta.png" alt="busta" id="busta">
+                <img src="../IMMAGINI/busta.png" alt="busta1" id="busta1">
+                <img src="../IMMAGINI/busta.png" alt="busta2" id="busta2">
+            </div>
+
+            
+
+
+            <div id="baseRete">
+                <div id="base"><img src="../IMMAGINI/baseRete.drawio.png" alt="base" id="baseReteImmagine"></div>
+                <img src="../IMMAGINI/pc1.png" alt="pc1" id="pc1" class="dispositivo">
+                <img src="../IMMAGINI/switch1.png" alt="sw1" id="sw1" class="dispositivo">
+                <img src="../IMMAGINI/switch2.png" alt="sw2" id="sw2" class="dispositivo">
+                <img src="../IMMAGINI/switch3.png" alt="sw3" id="sw3" class="dispositivo">
+                <img src="../IMMAGINI/pc2.png" alt="pc2" id="pc2" class="dispositivo">
+                <img src="../IMMAGINI/pc3.png" alt="pc3" id="pc3" class="dispositivo">
+                <img src="../IMMAGINI/pc4.png" alt="pc4" id="pc4" class="dispositivo">
+                <img src="../IMMAGINI/pc5.png" alt="pc5" id="pc5" class="dispositivo">
+                <img src="../IMMAGINI/bustaOk.drawio.png" alt="busta1" id="bustaOk">
+                <img src="../IMMAGINI/bustaErrore.drawio.png" alt="busta1" id="bustaErrore">
+            </div>
+
+            
+
+            <div id="cmd">
+                <p style="display: inline;">Z:\</p>
+                <input type="text" id="destinatario">
+                <p id="risultato"></p>
+            </div>
+                
+            <div id="draggable" class="ui-widget-content">
+                
+                <div id="pacchetto">
+                    <table>
+                        <tr>
+                            <th id="type"></th>
+                            <th>CODE: 0x0</th>
+                            <th>CHECKSUM</th>
+                        </tr>
+                        <tr>
+                            <th>TTL: 128</th>
+                            <th colspan="2">protocol: ping</th>
+                        </tr>
+    
+                        <tr>
+                            <th>Source Address:</th>
+                            <th id="mittente" colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th>Destination Address:</th>
+                            <th id="destinatario1" colspan="2"></th>
+                        </tr>
+                    </table>
+                </div>
+                <button id="chiusura">Nascondi</button>
+            </div>
+    </div>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bondavalli Michelle & Iori Gianluigi</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
