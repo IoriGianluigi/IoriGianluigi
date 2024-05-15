@@ -1,0 +1,344 @@
+/* Stili di base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.centra
+{
+    text-align: center;
+}
+
+/* Stile dell'intestazione */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Stile del menu */
+table.menu {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border-collapse: collapse;
+    text-align: center; /* Centra il testo orizzontalmente */
+}
+
+table.menu td {
+    padding: 10px 10px; /* Ridotto il padding */
+    width: 1%;
+    text-align: center;
+}
+
+table.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+table.menu a:hover {
+     color: #f2d71e;
+}
+
+/* Stile del titolo principale */
+.hero {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+    float: left;
+    margin-left: 15%;
+    margin-top: 2px;
+    width: 45%;
+    text-align: justify;
+}
+
+.hero img{
+    width: 250px;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.classe_img_con_didascalia { 
+    float: left; 
+    position: relative; 
+    overflow: hidden; 
+} 
+ 
+.classe_img_con_didascalia p { 
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    background: none repeat scroll 0 0  #f2d71e; 
+    color: #fff; 
+    display: none; 
+    width: 100%; 
+    padding: 10px; 
+} 
+ 
+.classe_img_con_didascalia:hover p { 
+    display:block; 
+}
+
+.container p a
+{
+    color: #f2d71e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form {
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid  #f2d71e;
+    border-radius: 5px;
+}
+
+.form button {
+    background-color:  #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color:  #f2d71e;
+}
+
+#map-container {
+    position: relative;
+}
+
+#map-image {
+    width: 250px;
+    height: auto;
+}
+
+/* Stili CSS per le aree della mappa */
+.map-area {
+    position: absolute;
+}
+
+footer
+{
+    background-color: #333;
+    color: #f2d71e;
+    padding: 20px;
+    text-align: end;
+    margin-top: 15px;
+}
+
+/* Stili per la tabella dei capitoli */
+.chapters {
+    margin-top: 20px;
+}
+
+.chapters h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #f2d71e;
+}
+
+td a
+{
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+}
+
+td a:hover
+{
+    color: #f2d71e;
+}
+
+/* Stile per il riassunto dei capitoli */
+.chapter-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.chapter-summary p
+{
+    text-align: justify;
+}
+
+.chapter-summary h2 {
+    text-align: center;
+}
+
+.domandes{
+    text-align: left;
+    margin-top: 20px;
+    color: #f2d71e;
+    text-shadow: 2px 2px 3px #333;
+}
+
+.domanded
+{
+    text-align: right;
+    margin-top: 20px;
+    color: #f2d71e;
+    text-shadow: 2px 2px 3px #333;
+}
+.pars{
+    font-size: 20px;
+    color: #666;
+    margin-top: 2px;
+    width: 50%;
+    text-align: justify;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pard{
+    font-size: 20px;
+    color: #666;
+    margin-top: 2px;
+    margin-left: 50%;
+    width: 50%;
+    text-align: justify;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/*Riassunti capitoli*/
+.chapter-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.chapter-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chapter-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.character-description {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.character-description h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.character-description p {
+    color: #666;
+    font-size: 18px;
+}
+
+.titcap
+{
+    color: #f2d71e;
+}
+
+.back-button{
+    margin: 50%px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    float: right;
+}
+
+.prev-button,.next-button
+{
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    float: left;
+}
+
+.back-button:hover, .prev-button:hover, .next-button:hover {
+    background-color: #f2d71e;
+}
+
